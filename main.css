@@ -59,6 +59,14 @@ nav h3 {
     padding-top: 0vw;
 }
 
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 120px; /* moved ads lower */
+}
+
 .content hr {
     border: 0;
     height: 4px;
