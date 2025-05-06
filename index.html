@@ -280,41 +280,39 @@
         We appreciate your cooperation in protecting intellectual property on NebulaPlay.
 
 
-        
-    <!-- Vertical Ad Template (styled as game) -->
-    <div id="vertical-ad-template" style="display: none;">
-      <div class="game-ad" style="display: inline-block; width: 160px; height: 600px; margin: 10px;">
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:160px;height:600px"
-             data-ad-client="ca-pub-2366308143645027"
-             data-ad-slot="2043599005"></ins>
+        <!-- Horizontal Ad Template -->
+        <div id="horizontal-ad-template" style="display: none;">
+          <div style="width: 100%; text-align: center; margin: 30px 0;">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2366308143645027"
+                 data-ad-slot="2043599005"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </div>
+
         <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-    </div>
+        document.addEventListener("DOMContentLoaded", function () {
+            const gamesContainer = document.getElementById("games");
+            const gameElements = Array.from(gamesContainer.querySelectorAll("a"));
+            const adHTML = document.getElementById("horizontal-ad-template").innerHTML;
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const gamesContainer = document.getElementById("games");
-        const gameElements = Array.from(gamesContainer.querySelectorAll("a"));
-        const adHTML = document.getElementById("vertical-ad-template").innerHTML;
-
-        let inserted = 0;
-        for (let i = 0; i < gameElements.length; i++) {
-            if ((i + 1) % 24 === 0) {
-                const adBlock = document.createElement("div");
-                adBlock.innerHTML = adHTML;
-                // Matches game item styling
-                adBlock.style.display = "inline-block";
-                adBlock.style.verticalAlign = "top";
-                adBlock.style.margin = "10px";
-                gamesContainer.insertBefore(adBlock, gameElements[i + 1 + inserted]);
-                inserted++;
+            let inserted = 0;
+            for (let i = 0; i < gameElements.length; i++) {
+                if ((i + 1) % 24 === 0) {
+                    const adBlock = document.createElement("div");
+                    adBlock.innerHTML = adHTML;
+                    gamesContainer.insertBefore(adBlock, gameElements[i + 1 + inserted]);
+                    inserted++;
+                }
             }
-        }
-    });
-    </script>
+        });
+        </script>
+
 
 </body>
 </html>
