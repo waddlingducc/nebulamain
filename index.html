@@ -279,19 +279,15 @@
 
         We appreciate your cooperation in protecting intellectual property on NebulaPlay.
 
-
-        <!-- Horizontal Ad Template -->
+        <!-- Ad Template (NO script inside) -->
         <div id="horizontal-ad-template" style="display: none;">
-          <div style="width: 100%; text-align: center; margin: 30px 0;">
+          <div class="game-ad" style="width: 100%; text-align: center; margin: 30px 0;">
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-2366308143645027"
                  data-ad-slot="2043599005"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
           </div>
         </div>
 
@@ -299,20 +295,19 @@
         document.addEventListener("DOMContentLoaded", function () {
             const gamesContainer = document.getElementById("games");
             const gameElements = Array.from(gamesContainer.querySelectorAll("a"));
-            const adHTML = document.getElementById("horizontal-ad-template").innerHTML;
+            const adTemplate = document.getElementById("horizontal-ad-template").firstElementChild;
 
             let inserted = 0;
             for (let i = 0; i < gameElements.length; i++) {
                 if ((i + 1) % 24 === 0) {
-                    const adBlock = document.createElement("div");
-                    adBlock.innerHTML = adHTML;
-                    gamesContainer.insertBefore(adBlock, gameElements[i + 1 + inserted]);
+                    const adClone = adTemplate.cloneNode(true);
+                    gamesContainer.insertBefore(adClone, gameElements[i + 1 + inserted]);
+                    (adsbygoogle = window.adsbygoogle || []).push({});
                     inserted++;
                 }
             }
         });
         </script>
-
 
 </body>
 </html>
