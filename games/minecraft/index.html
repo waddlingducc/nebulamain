@@ -14,23 +14,30 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden;
+            overflow-x: hidden;
             background: black;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             background-image: url(https://i.ibb.co/4ZMGnKmk/rgtrg455555.png);
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            padding-top: 70px; /* space for nav */
         }
 
         nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
             display: flex;
             align-items: center;
             gap: 10px;
+            padding: 10px 20px;
+            z-index: 9999;
         }
 
         .container {
@@ -38,7 +45,7 @@
             justify-content: space-between;
             width: 100%;
             max-width: 1200px;
-            margin: 20px 0;
+            margin-top: 120px; /* move ads lower */
         }
 
         .ad-banner {
@@ -47,17 +54,27 @@
         }
 
         .bottom-ad {
-            margin-top: 20px;
+            margin-top: 40px;
+        }
+
+        h2 {
+            margin: 5px 0;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="/">
+        <a href="https://nebulaplay.site">
             <img src="https://i.ibb.co/RTKMMcY7/irytyui.png" alt="logo">
         </a>
-        <h3>NebulaPlay</h3>
+        <h3 style="color: white;">NebulaPlay</h3>
     </nav>
+
+    <h2>Copy And Paste One Of These Links To Open The Game</h2>
+    <h2>https://nebulaplay.hs.vc/minecraft/</h2>
+    <h2>https://scholarshipfinder.hs.vc/minecraft/</h2>
 
     <div class="container">
         <!-- Left Vertical Ad -->
@@ -71,7 +88,6 @@
             </script>
         </div>
 
-        <!-- Spacer (optional main content) -->
         <div style="flex: 1;"></div>
 
         <!-- Right Vertical Ad -->
@@ -85,10 +101,6 @@
             </script>
         </div>
     </div>
-
-    <h2>Copy And Paste One Of These Links To Open The Game</h2>
-    <h2>https://nebulaplay.hs.vc/minecraft/</h2>
-    <h2>https://scholarshipfinder.hs.vc/minecraft/</h2>
 
     <!-- Bottom Horizontal Ad -->
     <div class="bottom-ad">
