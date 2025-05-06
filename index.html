@@ -47,14 +47,14 @@
         <a href="index.html">
             <img src="https://i.ibb.co/RTKMMcY7/irytyui.png" alt="logo">
         </a>
-        <h3>NebulaPlay</h3>
+        <h3>NebulaPlay.Site</h3>
     </nav>
 
     <div class="featured">
         <h1>Featured Unblocked Games 🔥</h1>
         <div class="column">
-          <a href="games/holifestival/">
-            <img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/b897d1356f5270be2ba5a3f392aaa4d1.png">
+          <a href="games/crossyroad/">
+            <img src="https://www.metacritic.com/a/img/catalog/provider/6/12/6-1-493122-52.jpg">
             <div class="play-button">
                 <i class="fa-solid fa-play"></i>
             </div>
@@ -99,24 +99,7 @@
         </div>
     </div>
 
-    <div style="display: flex; justify-content: flex-start; margin-top: 40px; padding: 0 20px; margin-left: 170px; margin-bottom: 60px;">
-
-      <!-- TikTok Videos Side by Side -->
-      <div style="display: flex; gap: 30px;">
-        <iframe src="https://www.tiktok.com/embed/7499164483969994014" width="325" height="575" frameborder="0" allowfullscreen></iframe>
-        <iframe src="https://www.tiktok.com/embed/7494407712005016878" width="325" height="575" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-      <!-- Promo Text (Right next to videos, pushed slightly downward) -->
-      <div style="margin-left: 50px; margin-top: 80px; color: black; font-family: inherit; font-size: 26px;">
-        <p>
-          <strong>Post A TikTok Showcasing NebulaPlay</strong><br>
-          <strong>and Tag</strong> <strong>@NebulaPlay.Site</strong><br>
-          <strong>To Be Featured!</strong>
-        </p>
-      </div>
-
-    </div>
+    
 
 
 
@@ -269,10 +252,10 @@
         <a href="games/sugarsugar/"><img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/64f6163d6918e93386f57b2a729fd6c0.png" alt="sugarsugar"></a>
         <a href="games/sugarsugar2/"><img src="https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=1200,height=1200,fit=cover,f=png/d351bb98618a0919cfda3e8df55e9f30.png" alt="sugarsugar2"></a>
         <a href="games/sugarsugar3/"><img src="https://crazygames.gg/wp-content/uploads/2022/09/sugar-sugar-3-1.jpg" alt="sugarsugar3"></a>
-        <a href="games/sugarsugarxmas/"><img src="https://pbs.twimg.com/media/Du0XVBbXgAAiofM.jpg" alt="sugarsugarxmas"></a>
+        <a href="games/sugarsugarxmas/"><img src="https://i.ibb.co/1YSfh5ns/iuasdsuiad.png" alt="sugarsugarxmas"></a>
         <a href="games/slowroads/"><img src="https://a.silvergames.com/j/b/slow-roads.jpg" alt="slowroads"></a>
         <a href="games/riseup/"><img src="https://play-lh.googleusercontent.com/_jkLVQ7DHlo6PJv1zvfOdWuavpnuVoCAb4OvPh81l1D9SVRDd1G-Vw3BAyFza-tr_jKF" alt="riseup"></a>
-        <a href="games/8ballclassic/"><img src="https://img.cdn.famobi.com/portal/html5games/images/tmp/8BallBilliardsClassicTeaser.jpg" alt="8ballclassic"></a>
+        <a href="games/8ballclassic/"><img src="https://i.ibb.co/k6HhCzwP/8-Ball-Billiards-Classic-Teaser.jpg" alt="8ballclassic"></a>
         <a href="games/paperly/"><img src="https://img.gamemonetize.com/ga0hdulxnef9p1hkw72ci2pk44lbcdar/512x512.jpg" alt="paperly"></a>
         <a href="games/flipparkourpro/"><img src="https://img.gamedistribution.com/e8938917404a4ed2b249d53d1b25faaf-512x512.jpeg" alt="flipparkourpro"></a>
 
@@ -298,10 +281,41 @@
 
 
         
-</iframe>
+    <!-- Vertical Ad Template (styled as game) -->
+    <div id="vertical-ad-template" style="display: none;">
+      <div class="game-ad" style="display: inline-block; width: 160px; height: 600px; margin: 10px;">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:160px;height:600px"
+             data-ad-client="ca-pub-2366308143645027"
+             data-ad-slot="2043599005"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
     </div>
-    </div>
-    
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const gamesContainer = document.getElementById("games");
+        const gameElements = Array.from(gamesContainer.querySelectorAll("a"));
+        const adHTML = document.getElementById("vertical-ad-template").innerHTML;
+
+        let inserted = 0;
+        for (let i = 0; i < gameElements.length; i++) {
+            if ((i + 1) % 24 === 0) {
+                const adBlock = document.createElement("div");
+                adBlock.innerHTML = adHTML;
+                // Matches game item styling
+                adBlock.style.display = "inline-block";
+                adBlock.style.verticalAlign = "top";
+                adBlock.style.margin = "10px";
+                gamesContainer.insertBefore(adBlock, gameElements[i + 1 + inserted]);
+                inserted++;
+            }
+        }
+    });
+    </script>
+
 </body>
 </html>
 
